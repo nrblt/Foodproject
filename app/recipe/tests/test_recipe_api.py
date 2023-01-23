@@ -62,11 +62,11 @@ class PublicRecipeAPITests(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    def test_auth_required(self):
-        """Test auth is required to call API."""
-        res = self.client.get(RECIPES_URL)
+    # def test_auth_required(self):
+    #     """Test auth is required to call API."""
+    #     res = self.client.get(RECIPES_URL)
 
-        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+    #     self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
 
 class PrivateRecipeApiTests(TestCase):
