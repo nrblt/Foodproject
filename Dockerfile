@@ -1,5 +1,5 @@
 FROM python:3.9-alpine3.13
-LABEL maintener = "Nurbolat"
+LABEL maintainer = "Nurbolat"
 
 ENV PYTHONUNBUFFERED 1
 
