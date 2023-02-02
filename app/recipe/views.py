@@ -25,7 +25,6 @@ from rest_framework.response import Response
         ]
     )
 )
-
 class RecipeViewSet(viewsets.ModelViewSet):
     """Recipe ViewSet"""
     serializer_class = serializers.RecipeDetailSerializer
@@ -74,6 +73,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 @extend_schema_view(
     list=extend_schema(
         parameters=[
@@ -99,7 +99,7 @@ class BaseRecipeAttrViewSet(mixins.ListModelMixin,
         queryset = self.queryset
         if assigned_only:
             queryset = queryset.filter(recipe__isnull=False)
-             
+
         return queryset.filter(
             user=self.request.user
         ).order_by('-name').distinct()
